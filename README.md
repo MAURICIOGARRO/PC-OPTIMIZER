@@ -1,4 +1,5 @@
 # OptiCore // Optimización, Diagnóstico y Reparación de Sistema
+> Optimizador de sistema operativo en Python: limpia archivos basura, monitorea CPU/RAM/disco, gestiona procesos y programas de inicio, y genera reportes de rendimiento.
 > **Suite moderna y minimalista para Windows: Rendimiento, Control de Servicios en Segundo Plano, Optimización de Controladores (Drivers), Salud y Despliegue Modular de Office**
 
 Una suite integral construida con **Python** y **CustomTkinter** con estética **Oscura Minimalista (Clean Slate & Zinc Dark)**, controles sobrios, tipografía clara, telemetría estable en tiempo real y consola de operaciones en vivo, **100% en español**.
