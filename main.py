@@ -1,8 +1,17 @@
 import sys
 import os
 
-# Asegurar que el directorio raíz del proyecto esté en el sys.path
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# Asegurar que el directorio raíz del proyecto esté en el sys.path y sea el directorio de trabajo activo
+if getattr(sys, 'frozen', False):
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+try:
+    os.chdir(BASE_DIR)
+except Exception:
+    pass
+
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 

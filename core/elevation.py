@@ -1,4 +1,5 @@
 import sys
+import os
 import ctypes
 
 def is_admin() -> bool:
@@ -13,18 +14,24 @@ def elevate() -> bool:
     if is_admin():
         return True
     try:
-        # Re-lanzar sys.executable con los argumentos originales usando 'runas'
-        params = " ".join([f'"{arg}"' for arg in sys.argv])
+        if getattr(sys, 'frozen', False):
+            executable = sys.executable
+            params = " ".join([f'"{arg}"' for arg in sys.argv[1:]])
+            work_dir = os.path.dirname(sys.executable)
+        else:
+            executable = sys.executable
+            params = " ".join([f'"{arg}"' for arg in sys.argv])
+            work_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+
         ret = ctypes.windll.shell32.ShellExecuteW(
             None,
             "runas",
-            sys.executable,
+            executable,
             params,
-            None,
+            work_dir,
             1  # SW_SHOWNORMAL
         )
         if ret > 32:
-            # Lanzado exitosamente como admin, el proceso actual debe cerrarse
             sys.exit(0)
         else:
             return False

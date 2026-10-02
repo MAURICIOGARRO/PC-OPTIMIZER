@@ -18,8 +18,14 @@ class MainWindow(ctk.CTk):
         super().__init__()
 
         self.title("OptiCore // Optimización, Diagnóstico y Reparación de Sistema")
-        self.geometry("1240x840")
-        self.minsize(1080, 700)
+        
+        # Adaptabilidad automática según la pantalla del equipo
+        screen_w = self.winfo_screenwidth()
+        screen_h = self.winfo_screenheight()
+        win_w = min(1240, max(980, int(screen_w * 0.90)))
+        win_h = min(840, max(620, int(screen_h * 0.88)))
+        self.geometry(f"{win_w}x{win_h}")
+        self.minsize(min(980, win_w), min(600, win_h))
 
         # Modo oscuro minimalista
         ctk.set_appearance_mode("dark")
