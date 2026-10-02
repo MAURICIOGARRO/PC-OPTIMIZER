@@ -12,8 +12,14 @@ if %errorLevel% neq 0 (
 )
 
 :: 2. Si ya existe el ejecutable portable compilado, ejecutarlo directamente
+if exist "bin\OptiCore.exe" (
+    echo [OK] Iniciando ejecutable portable OptiCore.exe desde bin...
+    start "" "bin\OptiCore.exe"
+    exit /b
+)
+
 if exist "dist\OptiCore.exe" (
-    echo [OK] Iniciando ejecutable portable OptiCore.exe...
+    echo [OK] Iniciando ejecutable portable OptiCore.exe desde dist...
     start "" "dist\OptiCore.exe"
     exit /b
 )

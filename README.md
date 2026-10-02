@@ -6,6 +6,18 @@ Una suite integral construida con **Python** y **CustomTkinter** con estética *
 
 ---
 
+## 💾 Descarga Directa (Ejecutable Portable .EXE)
+
+Para utilizar OptiCore en cualquier computador con Windows 10 u 11 **sin necesidad de tener Python instalado**:
+
+👉 **[Descargar OptiCore.exe (Portable)](bin/OptiCore.exe)**  
+*(También disponible directamente dentro de la carpeta `bin/OptiCore.exe` en este repositorio).*
+
+* **Cero dependencias:** No necesitas instalar Python, ni `pip`, ni librerías en el equipo.
+* **Permisos de Administrador Automáticos:** Cuenta con manifiesto nativo UAC para solicitar elevación al abrir y habilitar todas las funciones del sistema.
+
+---
+
 ## 🧭 Arquitectura Modular (7 Módulos Especializados)
 
 ### 1. 📊 Panel Principal
